@@ -1,23 +1,22 @@
 package com.itis.myApp
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
-import com.itis.myApp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    //  private var binding: ActivityMainBinding? = null
 
     private lateinit var etUsername : EditText
     private lateinit var etHeight : EditText
     private lateinit var etWeight : EditText
     private lateinit var etAge : EditText
     private lateinit var btnValidate : MaterialButton
-    private var resultInfo : TextView? = null
+    private lateinit var resultInfo : TextView
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                 val monthlyPayment : Int = ((height.toDouble() + weight.toDouble()) * 10).toInt()
                 val horoscope : String = if (age.toInt() < 20) "You'll have a good day!" else "Your day won't be shiny and bright..."
                 val personalTax : Int = ((height.toDouble() * 100 + username.length * 10) * 5).toInt()
-                resultInfo?.text = "Number of calories you need daily: $callories\n" +
+                resultInfo.text = "Number of calories you need daily: $callories\n" +
                         "Your NDS: $nds%\n" +
                         "Your monthly payment: $monthlyPayment\n" +
                         "Horoscope says today: $horoscope\n" +

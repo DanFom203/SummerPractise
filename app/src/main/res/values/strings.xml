@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">MyApp</string>
+    <string name="hello_everyone">Hello everyone!</string>
+    <string name="press_to_confirm">Press to confirm</string>
+    <string name="information">Here you can try and write your name, height, weight and age. This app will guess some more information about you. Have fun!</string>
+    <string name="what_is_your_name">What is your name?</string>
+    <string name="what_is_your_height">What is your height?</string>
+    <string name="what_is_your_weight">What is your weight?</string>
+    <string name="how_old_are_you">How old are you?</string>
+    <string name="result">result</string>
+
 </resources>
