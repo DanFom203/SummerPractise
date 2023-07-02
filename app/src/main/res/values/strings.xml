@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyApp</string>
+    <string name="profile_screen">Profile Screen</string>
+    <string name="id">Id</string>
+    <string name="name">Name</string>
+    <string name="go_back">Go back</string>
+    <string name="desc">Desc</string>
 </resources>
