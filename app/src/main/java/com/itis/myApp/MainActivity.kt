@@ -22,12 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        etUsername = findViewById(R.id.etUsername)
-        etHeight = findViewById(R.id.etHeight)
-        etWeight = findViewById(R.id.etWeight)
-        etAge = findViewById(R.id.etAge)
-        btnValidate = findViewById(R.id.btnValidate)
-        resultInfo = findViewById(R.id.resultInfo)
+        initialisationFunc()
 
         btnValidate.setOnClickListener {
 
@@ -37,31 +32,46 @@ class MainActivity : AppCompatActivity() {
             val age = etAge.text.toString().trim()
 
             if (username.isEmpty() || username.length > 50) {
-                etUsername.error = "Invalid username"
+                etUsername.error = getString(R.string.invalid_name)
                 return@setOnClickListener
             } else if (height.isEmpty() || height.toInt() > 250) {
-                etHeight.error = "Invalid height"
+                etHeight.error = getString(R.string.invalid_height)
                 return@setOnClickListener
             } else if (weight.isEmpty() || weight.toDouble() > 250.0) {
-                etWeight.error = "Invalid weight"
+                etWeight.error = getString(R.string.invalid_weight)
                 return@setOnClickListener
             } else if (age.isEmpty() || age.toInt() > 150) {
-                etAge.error = "Invalid age"
+                etAge.error = getString(R.string.invalid_age)
                 return@setOnClickListener
             } else {
-                val callories : Int = ((88.36 + (13.4 + weight.toDouble()) + (4.8 * height.toDouble()) - (5.7 * age.toDouble()))*3).toInt()
-                val nds : Int = username.length * 50 / 100
-                val monthlyPayment : Int = ((height.toDouble() + weight.toDouble()) * 10).toInt()
-                val horoscope : String = if (age.toInt() < 20) "You'll have a good day!" else "Your day won't be shiny and bright..."
-                val personalTax : Int = ((height.toDouble() * 100 + username.length * 10) * 5).toInt()
-                resultInfo.text = "Number of calories you need daily: $callories\n" +
-                        "Your NDS: $nds%\n" +
-                        "Your monthly payment: $monthlyPayment\n" +
-                        "Horoscope says today: $horoscope\n" +
-                        "Your main personal tax this year: $personalTax"
-                Toast.makeText(this, "Validation Completed", Toast.LENGTH_SHORT).show()
+                resultInfo.text = getAnswerString(username, height, weight, age)
+                Toast.makeText(this, R.string.validation, Toast.LENGTH_SHORT).show()
             }
 
         }
+    }
+
+    private fun getAnswerString(username: String, height: String, weight: String, age: String): String {
+        val callories : Int = ((88.36 + (13.4 + weight.toDouble()) + (4.8 * height.toDouble()) - (5.7 * age.toDouble()))*3).toInt()
+        val nds : Int = username.length * 50 / 100
+        val monthlyPayment : Int = ((height.toDouble() + weight.toDouble()) * 10).toInt()
+        val horoscope : String = if (age.toInt() < 20)
+            getString(R.string.horoscope_answer_1) else getString(R.string.horoscope_answer_2)
+        val personalTax : Int = ((height.toDouble() * 100 + username.length * 10) * 5).toInt()
+        val result: String = getString(R.string.result1) + callories + "\n" +
+                getString(R.string.result2) + nds + "%\n" +
+                getString(R.string.result3) + monthlyPayment + "\n" +
+                getString(R.string.result4) + horoscope + "\n" +
+                getString(R.string.result5) + personalTax
+        return result
+    }
+
+    private fun initialisationFunc() {
+        etUsername = findViewById(R.id.etUsername)
+        etHeight = findViewById(R.id.etHeight)
+        etWeight = findViewById(R.id.etWeight)
+        etAge = findViewById(R.id.etAge)
+        btnValidate = findViewById(R.id.btnValidate)
+        resultInfo = findViewById(R.id.resultInfo)
     }
 }

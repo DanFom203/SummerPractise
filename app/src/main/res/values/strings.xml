@@ -7,6 +7,19 @@
     <string name="what_is_your_height">What is your height?</string>
     <string name="what_is_your_weight">What is your weight?</string>
     <string name="how_old_are_you">How old are you?</string>
-    <string name="result">result</string>
+    <string name="horoscope_answer_1">You will have a good day!</string>
+    <string name="horoscope_answer_2">Your day is not going to be shiny and bright…</string>
+
+    <string name="result1">Number of calories you need daily:</string>
+    <string name="result2">Your NDS is now:</string>
+    <string name="result3">Your monthly payment:</string>
+    <string name="result4">Horoscope says today:</string>
+    <string name="result5">Your main personal tax this year:</string>
+
+    <string name="validation">Validation Completed</string>
+    <string name="invalid_age">Invalid Age</string>
+    <string name="invalid_weight">Invalid Weight</string>
+    <string name="invalid_height">Invalid Height</string>
+    <string name="invalid_name">Invalid Name</string>
 
 </resources>
