@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">MyApp</string>
-    <string name="profile_screen">Profile Screen</string>
-    <string name="id">Id</string>
-    <string name="name">Name</string>
-    <string name="go_back">Go back</string>
-    <string name="desc">Desc</string>
+    <string name="tvProfileScreenText">Profile Screen</string>
+    <string name="tvIdText">Id</string>
+    <string name="tvNameText">Name</string>
+    <string name="btnBackText">Go back</string>
+    <string name="tvDescText">Desc</string>
+    <string name="tvHiddenScreenText">Hidden Screen</string>
 </resources>

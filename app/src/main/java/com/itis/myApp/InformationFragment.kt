@@ -18,7 +18,7 @@ class InformationFragment : Fragment(R.layout.fragment_info) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentInfoBinding.bind(view)
-        binding?.button?.setOnClickListener {
+        binding?.btnToProfileFragment?.setOnClickListener {
             findNavController().navigateUp()
         }
         val fruit = getInfo()
@@ -28,9 +28,11 @@ class InformationFragment : Fragment(R.layout.fragment_info) {
 
     @SuppressLint("SetTextI18n")
     private fun setInfo(fruit: Fruit) {
-        binding?.id?.text = "ID: ${fruit.id}"
-        binding?.name?.text = "Name: ${fruit.name}"
-        binding?.desc?.text = "Desc: ${fruit.description}"
+        with(binding) {
+            this?.id?.text = "ID: ${fruit.id}"
+            this?.name?.text = "Name: ${fruit.name}"
+            this?.desc?.text = "Desc: ${fruit.description}"
+        }
     }
 
     private fun getInfo(): Fruit {

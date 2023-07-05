@@ -17,11 +17,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentProfileBinding.bind(view)
         initAdapter()
-        //  binding?.tvTitle?.setOnClickListener {
-        //      adapter?.updateDataset(
-        //          FruitRepository.list.subList(0, Random.nextInt(5))
-        //      )
-        //  }
     }
 
     override fun onDestroyView() {
